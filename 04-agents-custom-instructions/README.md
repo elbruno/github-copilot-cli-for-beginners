@@ -971,6 +971,24 @@ copilot  # This loads custom instructions by default
 
 ---
 
+## Preview: Agents vs Skills
+
+Before moving to the next chapter, here's a preview of how agents differ from skills:
+
+| | Agents | Skills |
+|---|---|---|
+| **Analogy** | Hiring a specialist (frontend expert) | Giving someone a detailed checklist |
+| **What it provides** | Persona, expertise, coding standards | Step-by-step instructions for a specific task |
+| **How it's invoked** | **Manual** - `/agent` or `--agent frontend` | **Automatic** - triggered when your prompt matches |
+| **Scope** | Broad domain expertise | Narrow, specific task |
+| **Example** | "Frontend agent" knows React patterns, accessibility, TypeScript | "Security audit skill" runs OWASP Top 10 checks |
+
+**The key insight**: An agent is *who* is helping you (a frontend specialist with years of experience). A skill is *what procedure* they follow (run this specific security checklist step by step).
+
+You can combine them: Ask your **security agent** to use your **penetration-testing skill** for a comprehensive security review.
+
+---
+
 ## What's Next
 
 Agents change *how* Copilot thinks. Now let's add new *capabilities* with the Skills system.

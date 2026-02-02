@@ -100,6 +100,41 @@ You can ask Copilot directly:
 
 **Quick rule**: Use agents for broad expertise, skills for specific task instructions, and MCP for external data.
 
+### Understanding the Agent vs Skill Difference
+
+Here's a deeper look at how agents and skills compare:
+
+| | Agents | Skills |
+|---|---|---|
+| **Real-world analogy** | Hiring a specialist (a frontend developer with 10 years of React experience) | Giving someone a detailed checklist (your team's 20-point security review process) |
+| **What it changes** | The AI's persona, expertise, and approach to problems | Step-by-step instructions for completing a specific task |
+| **How it's invoked** | **Manual** - You choose with `/agent` or `--agent frontend` | **Automatic** - Triggers when your prompt matches the skill's description |
+| **Scope** | Broad domain expertise (all frontend tasks) | Narrow, specific task (security audit, commit message, API docs) |
+| **YAML required** | `description` only | `name` + `description` |
+
+**Concrete example:**
+
+```
+You: "Review this authentication code for security issues"
+
+WITHOUT agent or skill:
+→ Generic review, might miss auth-specific vulnerabilities
+
+WITH security AGENT only:
+→ Thinks like a security expert, checks for common issues,
+   but uses its general knowledge
+
+WITH security-audit SKILL only:
+→ Follows your specific checklist (OWASP Top 10, your company's
+   auth requirements, required encryption standards)
+
+WITH BOTH (security agent + security-audit skill):
+→ A security expert following your team's specific checklist
+   = Best of both worlds
+```
+
+**The key insight**: An agent is *who* is helping you. A skill is *what procedure* they follow. Use agents for expertise, skills for consistency.
+
 > 📚 **Learn More**: See the official [About Agent Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) documentation for the complete reference on skill formats and best practices.
 
 ---

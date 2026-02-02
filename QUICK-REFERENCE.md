@@ -143,6 +143,19 @@ You are a frontend specialist with expertise in React and TypeScript.
 
 ---
 
+## Agents vs Skills
+
+| | Agents | Skills |
+|---|---|---|
+| **Analogy** | Hiring a specialist | Giving a detailed checklist |
+| **Invocation** | **Manual** (`/agent` or `--agent`) | **Automatic** (prompt matching) |
+| **Scope** | Broad expertise | Specific task |
+| **YAML required** | `description` | `name` + `description` |
+
+**Key insight**: Agent = *who* helps you. Skill = *what procedure* they follow.
+
+---
+
 ## Skills System
 
 ### Using Skills
